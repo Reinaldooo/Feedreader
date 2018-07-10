@@ -1,27 +1,18 @@
+
 $(function () {
-    /* This is our first test suite - a test suite just contains
-    * a related set of tests. This suite is all about the RSS
-    * feeds definitions, the allFeeds variable in our application.
-    */
+    // Test suite regarding RSS Feeds array.
+    // It contains all names and urls of the used feed
     describe('RSS Feeds', function () {
-        /* This is our first test - it tests to make sure that the
-         * allFeeds variable has been defined and that it is not
-         * empty. Experiment with this before you get started on
-         * the rest of this project. What happens when you change
-         * allFeeds in app.js to be an empty array and refresh the
-         * page?
-         */
+        // The test below makes sure that the
+        // allFeeds variable has been defined and that it is not
+        // empty.
         it('are defined', function () {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
-
-
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a URL defined
-         * and that the URL is not empty.
-         */
-
+        // The test below loops through each feed
+        // in the allFeeds object and ensures it has a URL defined
+        // and that the URL is not empty.        
         it('Every feed have an URL, and its not empty', function () {
             allFeeds.forEach(rss => {
                 expect(rss.url).toBeDefined();
@@ -29,12 +20,9 @@ $(function () {
                 expect(rss.url.length).toBeGreaterThan(1, 'url can not be empty');
             })
         });
-
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a name defined
-         * and that the name is not empty.
-         */
-
+        // The test below loops through each feed
+        // in the allFeeds object and ensures it has a name defined
+        // and that the name is not empty. 
         it('Every feed have a name, and its not empty', function () {
             allFeeds.forEach(rss => {
                 expect(rss.name).toBeDefined();
@@ -43,49 +31,29 @@ $(function () {
             })
         });
     });
-
-
-    /* TODO: Write a new test suite named "The menu" */
-
+    // Test suite regarding the site menu.
     describe('The menu', function () {
-        /* This is our first test - it tests to make sure that the
-         * allFeeds variable has been defined and that it is not
-         * empty. Experiment with this before you get started on
-         * the rest of this project. What happens when you change
-         * allFeeds in app.js to be an empty array and refresh the
-         * page?
-         */
+        // The test below ensures the menu element is
+        // hidden by default.    
+        it('Menu should be hidden by default', function () {
+            let className = document.querySelector('body').className;
+            expect(className).toBe('menu-hidden');
+        });
+        // The test beloe ensures the menu changes
+        // visibility when the menu icon is clicked.
+        it('Menu should toggle visibility when clicked', function () {
+            let menu = $('.menu-icon-link');
+            let body = $('body');
+            //First we click and test if the hidden class has been removed:
+            menu.trigger('click');
+            expect(body[0].className).toBe('');
+            //Then we click again and test if it has been added:
+            menu.trigger('click');
+            expect(body[0].className).toBe('menu-hidden');
+        });
 
     });
-
-    /* TODO: Write a test that ensures the menu element is
-     * hidden by default. You'll have to analyze the HTML and
-     * the CSS to determine how we're performing the
-     * hiding/showing of the menu element.
-     */
-
-    it('Menu should be hidden by default', function () {
-        let className = document.querySelector('body').className;
-        expect(className).toBe('menu-hidden');
-    });
-
-    /* TODO: Write a test that ensures the menu changes
-    * visibility when the menu icon is clicked. This test
-    * should have two expectations: does the menu display when
-    * clicked and does it hide when clicked again.
-    */
-
-    it('Menu should toggle visibility when clicked', function () {
-        let trigger = $('.menu-icon-link');
-        let body = $('body');
-        trigger.trigger('click');
-        expect(body[0].className).toBe('');
-        trigger.trigger('click');
-        expect(body[0].className).toBe('menu-hidden');
-    });
-
-
-    /* TODO: Write a new test suite named "Initial Entries" */
+    // Test suite regarding Initial Entries.
 
     /* TODO: Write a test that ensures when the loadFeed
      * function is called and completes its work, there is at least
