@@ -54,18 +54,16 @@ $(function () {
 
     });
     // Test suite regarding Initial Entries.
+    describe('Initial Entries', function () {
+        // This test ensures that when the loadFeed
+        // function is called and completes its work, there is at least
+        // a single .entry element within the .feed container.
 
-    /* TODO: Write a test that ensures when the loadFeed
-     * function is called and completes its work, there is at least
-     * a single .entry element within the .feed container.
-     * Remember, loadFeed() is asynchronous so this test will require
-     * the use of Jasmine's beforeEach and asynchronous done() function.
-     */
+    });
+    // Test suite regarding New Feed Selection.
+    describe('Initial Entries', function () {
+        //  This test ensures that when a new feed is loaded
+        //  by the loadFeed function,the content actually changes.
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
-
-    /* TODO: Write a test that ensures when a new feed is loaded
-     * by the loadFeed function that the content actually changes.
-     * Remember, loadFeed() is asynchronous.
-     */
+    });
 }());
