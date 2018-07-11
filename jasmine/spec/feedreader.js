@@ -78,7 +78,8 @@ $(function () {
                 //the first feed was fetched and stored
                 loadFeed(1, () => {
                     secondFeed = $('.feed').html();
-                    //the second feed was fetched and stored                 
+                    //the second feed was fetched and stored 
+                    iniciaModal('modal-promocao');               
                     done();
                     //Using done will tell jasmine that the operation is complete.
                 });                             
