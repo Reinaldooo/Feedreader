@@ -9,6 +9,7 @@
 
 * Go to the [FeedReader site](https://reinaldooo.github.io/Feedreader/);
 * Wait a few seconds and a modal will inform you that all tests are done.
+* Scroll down to check all tests performed, and if they all passed.
 
 
 

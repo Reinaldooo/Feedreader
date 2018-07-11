@@ -110,8 +110,8 @@ h2 {
 
 .modal {
     background: white;
-    width: 10%;
-    min-width: 200px;
+    width: 20%;
+    min-width: 430px;
     padding: 40px;
     border: 1rem solid #4caf50;
     position: relative;
