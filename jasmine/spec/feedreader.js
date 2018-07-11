@@ -76,7 +76,7 @@ $(function () {
         // function is called and completes its work, there is at least
         // a single .entry element within the .feed container.   
         beforeEach((done) => {
-            loadFeed(0, () => { done(); });
+            loadFeed(0, done); //done passed like this is the same as () => { done(); }
         });
 
         it('There is at least a single .entry element within the .feed container', function () {
