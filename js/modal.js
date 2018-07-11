@@ -14,7 +14,9 @@ function iniciaModal(modalID) {
 document.addEventListener('scroll', () => {
     const modal = document.getElementById('modal-promocao');
 
-    if (window.pageYOffset > 15) {
+    console.log(window.pageYOffset)
+
+    if (window.pageYOffset > 100) {
         modal.classList.remove('mostrar');
     }
 })
